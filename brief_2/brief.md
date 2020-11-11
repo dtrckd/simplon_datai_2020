@@ -6,29 +6,33 @@ Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data
 
 ## Description
 
-Construire un moteur de recherche d'emploi à partir de donnée brut présente sur le web.
+Construire un moteur de recherche d'emploi à partir de données bruts présentes sur le web.
 
 ## Contexte
 
-Face à la montée du chômage systémique, les demandeurs d'emploi vont drastiquement augmenter. Cela va occasionner un fort besoin en recherche d'emploi.
-Dans ce contexte, nous cherchons à construire un système permettant d'agréger des offres d'emploi disponible sur l'internet. 
-L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adapté pour lui.
+Face à la montée du chômage systémique(ça veut dire quoi?), les demandeurs d'emploi vont drastiquement augmenter. Cela va occasionner un fort besoin en recherche d'emploi.
+Dans ce contexte, nous cherchons à construire un système (un progamme?) permettant d'agréger des offres d'emploi disponibles sur l'Internet. 
+L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adaptée pour lui.
 
 La source des donnée proviendra dans un premier temps d'un **flux RSS** du lien suivant: http://rss.jobsearch.monster.com/rssquery.ashx
-Ce lien permet notamment de filtrer les résultats à l'aide d'un champs textuel. Ce champs peut être renseigner en ajoutant à l'URL le paramètre `q` contenant la champs à chercher.
-Par exemple en effectuant une requête à l'URL : `http://rss.jobsearch.monster.com/rssquery.ashx?q=machine learning`, qui va chercher les métiers traitant de "machine learning".
+Ce lien (site?) permet notamment de filtrer les résultats à l'aide d'un champs textuel. Ce champs peut être renseigné en ajoutant à l'URL le paramètre `q` contenant la champs à chercher.
+Par exemple en effectuant une requête à l'URL : `http://rss.jobsearch.monster.com/rssquery.ashx?q=machine_learning`, qui va chercher les métiers traitants de "machine learning".
 
-Afin de récupérer un large nombre de fiche d'emploi pour alimenter notre base de donnée, nous allons requêter le flux RSS donné en utilisant des mot clés représentant les catégories de métier provenant de l'open data. Vous devrez notamment agréger les terminologie présentées dans les deux catalogues suivants:
-* récupérer tout les termes unique du "libellé ROME" : https://www.data.gouv.fr/fr/datasets/r/ccf8aec2-3463-414c-b9ed-1d416f2b7a96
-* récupérer tout les termes unique du "libellé métier" : https://api.opendata.onisep.fr/downloads/5fa5949243f97/5fa5949243f97.json 
+Afin de récupérer un large nombre de fiches d'emploi pour alimenter notre base de données, nous allons faire une requête sur le flux RSS donné en utilisant des mot clés représentant les catégories des métiers provenant de l'open data (?). Vous devrez notamment agréger les terminologies présentées dans les deux catalogues suivants:
+* récupérer tout les termes uniques du "libellé ROME" : https://www.data.gouv.fr/fr/datasets/r/ccf8aec2-3463-414c-b9ed-1d416f2b7a96
+* récupérer tout les termes uniques du "libellé métier" : https://api.opendata.onisep.fr/downloads/5fa5949243f97/5fa5949243f97.json 
 
-Muni de cette ensemble lexical, vous êtes chargé de designer et implémenter un bot charger de récupérer l'ensemble des fiches métiers pour chaque mot du lexique construit. (Attention limiter votre nombre de requête pour les phase de test pour ne pas vous faire ban du site cible). Ce bot doit répondre aux caractéristiques suivantes : 
-* le bot doit prendre en paramètre (peut importe comment) le fichier lexical que vous avez construit
-* pour chaque entrer de ce ficher lexical le bot doit extraire tout les documents présents dans le flux RSS avec chacun des champs présents (titre, description, etc).
-* pour chaque document **UNIQUE** vous devais créer une entrée dans une base données NoSQL orienté document (tel que MongoDB)
-* insérer pour chaque document le terme de recherche avec la requête RSS à retourner
+Muni de cette ensemble lexicale, vous êtes chargées de designer et implémenter un bot qui doit récupérer l'ensemble des fiches d'emploi pour chaque mot du lexique construit.
+(Attention! Limiter votre nombre de requêtes pour la phase de test pour ne pas vous faire banner du site cible!)
+Une bonne manière de construire ce bot est de respecter les caractéristiques suivantes: 
+* Le bot doit prendre comme paramètre (peu importe comment) le fichier lexical que vous avez construit
+* Pour chaque entrée de ce fichier lexical le bot doit extraire tout les documents présents dans le flux RSS avec chacun des champs présents (titre, description, etc).
+* Pour chaque document **UNIQUE** vous devez créer une entrée dans une base de données NoSQL orientée document (tel que MongoDB)
+* Insérer pour chaque document le terme de recherche avec la requête RSS à retourner (preciser)
 
 Finalement, vous devez créer une application simple (type client serveur) permettant d'accéder à votre base de donnée. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
+
+Comment pourrait-on mesurer la pertinence ?
 
 ### Bonus
 
