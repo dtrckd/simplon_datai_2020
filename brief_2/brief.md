@@ -1,46 +1,44 @@
-
-
 # Construire un moteur de recherche d'emploi 
 
-c3 c20 c2 c5 c2 c4 c1
+compétences: c3 c20 c2 c5 c2 c4 c1  
+Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data  
 
 
 ## Description
 
 Construire un moteur de recherche d'emploi à partir de donnée brut présente sur le web.
-Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data
 
 ## Contexte
 
-Face à la monté du chomage systémique, les demandeurs d'emploi vont drastiquement augmenter. Cela va occasionner un fort besoin en recherche d'emploi.
-Dans ce contexte, nous cherchons à construire un systéme permettant d'aggréger des offres d'emploi disponible sur l'internet. 
-L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploie trouve une offre adapté pour lui.
+Face à la montée du chômage systémique, les demandeurs d'emploi vont drastiquement augmenter. Cela va occasionner un fort besoin en recherche d'emploi.
+Dans ce contexte, nous cherchons à construire un système permettant d'agréger des offres d'emploi disponible sur l'internet. 
+L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adapté pour lui.
 
 La source des donnée proviendra dans un premier temps d'un **flux RSS** du lien suivant: http://rss.jobsearch.monster.com/rssquery.ashx
 Ce lien permet notamment de filtrer les résultats à l'aide d'un champs textuel. Ce champs peut être renseigner en ajoutant à l'URL le paramètre `q` contenant la champs à chercher.
-Par exmple en requetant l'URL suivante: `http://rss.jobsearch.monster.com/rssquery.ashx?q=machine learning`, pour cherche les métiers traitant de "machine learning".
+Par exemple en effectuant une requête à l'URL : `http://rss.jobsearch.monster.com/rssquery.ashx?q=machine learning`, qui va chercher les métiers traitant de "machine learning".
 
-Afin de récupérer un large nombre de fiche d'emploi pour alimenter notre base de donnée, nous allons requeter le flux RSS donné en utilisant des mot clés représentant les catégories de métier provenant de l'open data. Vous devrez notamment aggréger les terminologie présentees dans les deux catalogues suivants:
-* https://www.data.gouv.fr/fr/datasets/r/ccf8aec2-3463-414c-b9ed-1d416f2b7a96 : récupérer tout les termes unique du "libéllé ROME"
-* https://api.opendata.onisep.fr/downloads/5fa5949243f97/5fa5949243f97.json : récupérer tout les termes unique du "libéllé métier"
+Afin de récupérer un large nombre de fiche d'emploi pour alimenter notre base de donnée, nous allons requêter le flux RSS donné en utilisant des mot clés représentant les catégories de métier provenant de l'open data. Vous devrez notamment agréger les terminologie présentées dans les deux catalogues suivants:
+* récupérer tout les termes unique du "libellé ROME" : https://www.data.gouv.fr/fr/datasets/r/ccf8aec2-3463-414c-b9ed-1d416f2b7a96
+* récupérer tout les termes unique du "libellé métier" : https://api.opendata.onisep.fr/downloads/5fa5949243f97/5fa5949243f97.json 
 
-Muni de cette ensemble lexical, vous êtes chargé de designer et implémenter un bot charger de récupérer l'ensemble des fiches métiers pour chaque mot du lexique construit. (Attention limiter votre nombre de requete pour les phase de test pour ne pas vous faire ban du site cible). Ce bot doit répondre au cararistiques suivantes : 
-* le bot doit prendre en paramètre (peut importe comment) le fichier lexical que vous avez contruit
-* pour chaque entrer de ce ficher lexical le bot doit extraire tout les documents présents dans le flux RSS avec chacun des champs présents (title, description, etc).
+Muni de cette ensemble lexical, vous êtes chargé de designer et implémenter un bot charger de récupérer l'ensemble des fiches métiers pour chaque mot du lexique construit. (Attention limiter votre nombre de requête pour les phase de test pour ne pas vous faire ban du site cible). Ce bot doit répondre aux caractéristiques suivantes : 
+* le bot doit prendre en paramètre (peut importe comment) le fichier lexical que vous avez construit
+* pour chaque entrer de ce ficher lexical le bot doit extraire tout les documents présents dans le flux RSS avec chacun des champs présents (titre, description, etc).
 * pour chaque document **UNIQUE** vous devais créer une entrée dans une base données NoSQL orienté document (tel que MongoDB)
-* insérer pour chaque document le terme de recherche avec la requete RSS à retourner
+* insérer pour chaque document le terme de recherche avec la requête RSS à retourner
 
-Finalement, vous devez créer une application simple (type client serveur) permettant d'acceder à votre base de donnée. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
+Finalement, vous devez créer une application simple (type client serveur) permettant d'accéder à votre base de donnée. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
 
 ### Bonus
 
-* retourner le nombre de document totale correspondant à une requetes.
+* retourner le nombre de document totale correspondant à une requêtes.
 * afficher la distribution (histogramme) de la répartition des offres d'emploi par métiers.
-* afficher les statisques de votre base de donnée suivantes: Nombre de documents totale, nombre de mot unique totale dans l'ensemble des documents, nombre de mots non unique totale
-* quelles sont les 20 mots les plus frequents dans les offres d'emploi ? (En dehors des **stopwords**)
-* Combien d'offre d'emploi différent avez vous pu trouver sur Monster ? Pouvez vous augmentez ce nombre avec un lexique différet
-* Accelerer l'acces à votre base de donnée définnissant des indexs.
-* créer un requirements.txt permettant d'installer automatiquement les dépendances python
+* afficher les statistiques de votre base de donnée suivantes: Nombre de documents totale, nombre de mot unique totale dans l'ensemble des documents, nombre de mots non unique totale
+* quelles sont les 20 mots les plus fréquents dans les offres d'emplois ? (En dehors des **stopwords**) le 10 bi-gram les plus fréquents ?
+* Combien d'offre d'emploi différent avez vous pu trouver sur Monster ? Pouvez vous augmentez ce nombre avec un lexique différent
+* Accélérer l'accès à votre base de donnée définissant des indexs.
+* créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
 
 
 
@@ -57,58 +55,68 @@ scrapy:
 
 ## Livrable
 
-un git par apprenants avec les élements suivants:
+un git par apprenants avec les éléments suivants:
 1. le bot, qui doit pouvoir être lancé pour alimenter la base de données.
-2. le serveur, qui doit pouvoir être lancé et requetable depuis un navigateur.
-3. un fichier Readme.md qui décrit succintement votre code et explique comment lancer votre programme, les eventuelles arguments et comment effectuer les requetes de recherche.
+2. le serveur, qui doit pouvoir être lancé et qui accessible depuis un navigateur.
+3. un fichier Readme.md qui décrit succinctement votre code et explique comment lancer votre programme, les éventuelles arguments et comment effectuer les requêtes de recherche.
 
 ## Modalité pédagogique
 
 durée: 3 jours
-groupe: collaboration en trinome
+groupe: collaboration en trinôme
 
-Jour1:
+### Organisations
 
-1. decouverte du sujet et des groupes et présentation
+###### Jour1
+
+1. Découverte du sujet des groupes et de l'organisation didactique : 20 min pour laisser les groupes relire et discuter le brief ensemble, déterminer une feuille de route, puis point pour faire remonter les questions et regarder quelques feuille de route.
 2. Installation de MongoDB guidé (le but n'est pas de perdre trop de temps à l'installation).
 
-Voici deux méthodes pour installer mongo du plus simple au plus complexe (à utiliser en fonction de votre préférence ou en cas d'echec d'une méthode)
+```markdown
+    Voici deux méthodes pour installer mongo du plus simple au plus complexe (à utiliser en fonction de votre préférence ou en cas d'echec d'une méthode)
 
-**avec docker**
+    **avec docker**
 
-Commencons par installer **docker**
+    Commencons par installer **docker**
 
-soit avec : `sudo snap install docker`
-ou avec `apt`: `apt install docker.io`
+    soit avec : `sudo snap install docker`
+    ou avec `apt`: `apt install docker.io`
 
-Ensuite, créer un repertoire ou seront stocker les donnée de la MongoDB, par exemple
+    Ensuite, créer un repertoire ou seront stocker les donnée de la MongoDB, par exemple
 
-    mkdir -p ~/data-mongodb
+        mkdir -p ~/data-mongodb
 
-il suffit ensuite d'installer mongo avec la suivante suivante
+    il suffit ensuite d'installer mongo avec la suivante suivante
 
-    docker run -d -p 27017:27017 -v ~/src/data/mongo-docker:/data/db --name mongodb mongo:4.2 
+        docker run -d -p 27017:27017 -v ~/src/data/mongo-docker:/data/db --name mongodb mongo:4.2 
 
-ici, docker se charge d'installer tout le necessaire et de placer le tout dans un conteneur isolé.
+    ici, docker se charge d'installer tout le necessaire et de placer le tout dans un conteneur isolé.
 
-Si l'installation a fonctionné, vous pourrer renter dans un interpreteur mongodb avec la commande suivante:
+    Si l'installation a fonctionné, vous pourrez renter dans un interpreteur mongodb avec la commande suivante:
 
-    docker exec -it mongodb mongo
-
-
-
-**avec apt**
-
-voir le tuto pour debian ou ubuntu sur la doc mongo
+        docker exec -it mongodb mongo
 
 
+    **avec apt**
+
+    voir le tuto pour debian ou ubuntu sur la doc mongo.
+```
 
 
-3. veilles MongoDB + 
+3. veilles MongoDB
+    * créer une collection
+    * insérer à la main 2 ou 3 fiche d'emploi à partir du résultat renvoyé par le flux RSS utiliser `db.my_collection.insert({...})`. 
+    * lister les documents de votre base à l'aide la function `db.my_collection.find`.
+    * effectuer des requete textuelle sur les document que vous avez insérer: voir la doc sur la recherche textuelle: https://docs.mongodb.com/manual/text-search/ 
 
-+ veilles Mongodb + 
 
+4. Créer le lexique de mots métiers.
 
+5. ...
+
+###### jour2
+
+à venir...
 
 ## Critére de perfomance
 
@@ -117,7 +125,7 @@ voir le tuto pour debian ou ubuntu sur la doc mongo
 
 
 **critére tech**
-* la rapidité de la réponse aux requetes utilisateur. 
-* qualité du code (structure, commentaires et fonctionalité)
+* la rapidité de la réponse aux requêtes utilisateur. 
+* qualité du code (structure, commentaires et fonctionnalité)
 * qualité de l'interface utilisateur pour requeter le moteur de recherche
 
