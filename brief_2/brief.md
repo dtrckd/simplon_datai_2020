@@ -62,8 +62,8 @@ un git par apprenants avec les éléments suivants:
 
 ## Modalité pédagogique
 
-durée: 3 jours
-groupe: collaboration en trinôme
+durée: 3 jours  
+groupe: collaboration en trinôme  
 
 ### Organisations
 
