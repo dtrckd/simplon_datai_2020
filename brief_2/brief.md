@@ -108,6 +108,7 @@ groupe: collaboration en trinôme
     * insérer à la main 2 ou 3 fiche d'emploi à partir du résultat renvoyé par le flux RSS utiliser `db.my_collection.insert({...})`. 
     * lister les documents de votre base à l'aide la function `db.my_collection.find`.
     * effectuer des requete textuelle sur les document que vous avez insérer: voir la doc sur la recherche textuelle: https://docs.mongodb.com/manual/text-search/ 
+    * qu'est ce qu'un index ? comment mongo utilises les index et pourquoi ?
 
 
 4. Créer le lexique de mots métiers.
