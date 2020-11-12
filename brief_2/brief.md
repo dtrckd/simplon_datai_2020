@@ -12,44 +12,43 @@ Construire un moteur de recherche d'emploi à partir de données bruts présente
 
 Face à la montée du chômage systémique lié aux perturbation sur le marché du travail, les demandeurs d'emploi vont drastiquement augmenter et les emplois evoluer.
 Cela va occasionner un fort besoin en recherche d'emploi.
-Dans ce contexte, M. Pontier CEO de la société FlashBot cherche à develloper un moteur de recherche d'emploi et à fait appel à votre expertise.
-Ils cherchent à construire un système permettant d'agréger des offres d'emploi à partir de données disponible sur l'Internet, à la fois rapidement et de manière innovante.
-L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adaptée pour lui.
+Dans ce contexte, M. Pontier CEO de la société FlashBot cherche à developper un moteur de recherche d'emploi et à fait appel à votre expertise.
+Ils cherchent à construire un système permettant d'agréger des offres d'emploi à partir de données disponible sur l'Internet, à la fois rapidement et de manière innovante,
+l'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adaptée pour lui.
 
-Plusieurs pateforme existantes offrent des API permettant de rechercher des offres d'emplois.
-Cependant les données sont dispersés, hétérogènes et ne permettent pas de faire de l'offre adapté.
+Plusieurs pateformes existantes offrent des API permettant de rechercher des offres d'emplois. Cependant les données sont dispersés, hétérogènes et ne permettent pas de faire de l'offre adapté.
 
 Aujourd'hui M. Pontier cherche à exploiter un **flux RSS** à partir du lien suivant: http://rss.jobsearch.monster.com/rssquery.ashx?q=big data
 
-La mission consiste à exploiter ce lien pour récolter le maximum de fiche d'emploi et les stocker en Base De Donnée (BDD) afin de les rendres accessibles et facilliter l'ajout de nouveaux documents.
-Pour ce faire le client suggère l'utilisation d'une BDD **NoSQL** orienté document dans le but de faciliter:
-* l'ajout de nouveaux document avec des formats différents
+La mission consiste à exploiter ce lien pour récolter le maximum de fiches d'emploi et les stocker en Base De Données (BDD) afin de les rendres accessibles et faciliter l'ajout de nouveaux documents.
+Pour ce faire le client suggère l'utilisation d'une BDD **NoSQL** orienté document qui s'appelle MongoDB dans le but de faciliter:
+* l'ajout de nouveaux documents avec des formats différents
 * la recherche d'information textuelles
 
 Enfin, le client souhaite créer une application client-serveur permettant à un utilisateur de rechercher les offres d'emploi dans sa BDD à partir de requetes **HTTP**.
 
-En conclusion, le client vous propose de designer et implémenter le systéme avec les caractéristiques suivantes:
-* une bot/programme en python pour récolter les données et les envoyer à la BDD. <!--(Attension: Limiter votre nombre de requêtes pour la phase de test pour ne pas vous faire bannir du site cible!)-->
-* Pour chaque document vous devez créer une entrée dans une BDD orienté document avec tout les champs présent (titre, description, etc)(le client suggére MongoDB) .
-* Chaque document inséré en BDD devra avoir un champ correspondant au terme de recherche utilisé lors de la requete au flux RSS.
-* le nombre d'elements dans la bdd doit être optimisé, c'est à dire que les doublons doivent être ecartés.
-* un application client-serveur doit permettre de faire des requetes à la BDD. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
+En résumant, le client vous demande de designer et implémenter un systéme avec les caractéristiques suivantes:
+* Un bot/programme en python pour récolter les données et les envoyer à la BDD, notamment: <!--(Attention: Limiter votre nombre de requêtes pour la phase de test pour ne pas vous faire bannir du site cible!)-->
+* Pour chaque document vous devez créer une entrée dans la BDD orienté document MongoDB avec tout les champs présents (titre, description du poste, etc.).
+* Chaque document inséré en BDD devra avoir un champ correspondant au terme de recherche utilisé lors de la requête au flux RSS.
+* Le nombre d'elements dans la BDD doit être optimisé, c'est à dire que les doublons doivent être ecartés.
+* Une application client-serveur pour permettre de faire des requetes à la BDD. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérés et de retourner la liste des 10 premiers documents les plus pertinents.
 
 
 ### Bonus Tech
-* améliorer le retour d'une requete client en affichant le nombre de document totale qui ont matché une recherche
-* Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requete client: 
+* Améliorer le retour d'une requête client en affichant le nombre de document totale qui ont matché une recherche
+* Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requête client: 
     * nombre de documents totale,
-    * nombre de mot unique totale dans l'ensemble des documents,
-    * nombre de mots non unique totale
-* créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
+    * nombre de mots uniques totale dans l'ensemble des documents,
+    * nombre de mots non uniques totale
+* Créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
 
 
 ### Bonus Data
-* Comment peut-on mesurer la pertinence pour le classement des documents ? Comment est-elle mesurer ?
-* afficher la distribution (histogramme) de la répartition des offres d'emploi par métiers.
-* quelles sont les 20 mots les plus fréquents dans les offres d'emplois ? (En dehors des **stopwords**) le 10 bi-gram les plus fréquents ?
-* Combien d'offre d'emploi différent avez vous pu trouver sur Monster ? Pouvez vous augmentez ce nombre avec un lexique différent
+* Comment peut-on mesurer la pertinence pour le classement des documents ? Comment est-elle mesurée ?
+* Afficher la distribution (histogramme) de la répartition des offres d'emploi par métier.
+* Quelles sont les 20 mots les plus fréquents dans les offres d'emplois ? (En dehors des **stopwords**) Quelles sont les 10 bi-gram les plus fréquents ?
+* Combien d'offres d'emploi différentes avez-vous pu trouver sur Monster ? Pouvez-vous augmenter ce nombre avec un lexique différent?
 
 
 
@@ -63,13 +62,12 @@ scrapy:
 * https://docs.scrapy.org
 
 
-
 ## Livrable
 
-un git par apprenants avec les éléments suivants:
-1. le bot, qui doit pouvoir être lancé pour alimenter la base de données.
-2. le serveur, qui doit pouvoir être lancé et servir (ie répondre) à des requetes HTTP.
-3. un fichier Readme.md qui décrit succinctement votre code et explique comment lancer votre programme, les éventuelles arguments et comment effectuer les requêtes de recherche.
+Un git par apprenant avec les éléments suivants:
+1. Le bot, qui doit pouvoir être lancé pour alimenter la base de données.
+2. Le serveur, qui doit pouvoir être lancé et servir (ie répondre) à des requetes HTTP.
+3. Un fichier Readme.md qui décrit succinctement votre code et explique comment lancer votre programme, les éventuels arguments et comment effectuer les requêtes de recherche.
 
 ## Modalité pédagogique
 
@@ -80,7 +78,7 @@ groupe: collaboration en trinôme
 
 ###### Jour1
 
-1. Découverte du sujet des groupes et de l'organisation didactique : 30 min pour laisser les groupes relire et discuter le brief ensemble, déterminer une feuille de route, puis point pour faire remonter les questions et regarder quelques feuille de route.
+1. Découverte du sujet, des groupes et plan du travail: 30 min pour laisser les groupes relire et discuter le brief ensemble, déterminer une feuille de route, faire un point collectif pour faire remonter les questions et discussion des feuilles de route.
 2. Installation de MongoDB guidé (le but n'est pas de perdre trop de temps à l'installation).
 
 ```markdown
@@ -114,15 +112,15 @@ groupe: collaboration en trinôme
 ```
 
 
-3. veilles MongoDB
-4. stratégie pour récolter les données ?
-5. suite ?
+3. Veilles MongoDB
+4. Stratégies pour récolter les données ?
+5. Suite ?
 
 
 ## Critére de perfomance
 
 **critère humain**
-* la moyenne d'avancement entre tout les groupes doit être maximale, et l'ecart type minimal
+* la moyenne d'avancement entre tout les groupes doit être maximale, et l'ecart type minimal.
 
 
 **critère tech**
