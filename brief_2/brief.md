@@ -6,42 +6,44 @@ Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data
 
 ## Description
 
-Construire un moteur de recherche d'emploi à partir de données bruts présentes sur le web.
+Construire un moteur de recherche d'emploi à partir de données bruts présentes sur le web et develloper une application client-serveur pour acceder aux données.
 
 ## Contexte
 
-Face à la montée du chômage systémique(ça veut dire quoi?), les demandeurs d'emploi vont drastiquement augmenter. Cela va occasionner un fort besoin en recherche d'emploi.
-Dans ce contexte, nous cherchons à construire un système (un progamme?) permettant d'agréger des offres d'emploi disponibles sur l'Internet. 
+Face à la montée du chômage systémique lié aux perturbation sur le marché du travail, les demandeurs d'emploi vont drastiquement augmenter et les emplois evoluer.
+Cela va occasionner un fort besoin en recherche d'emploi.
+Dans ce contexte, M. Pontier CEO de la société FlashBot (fictif) cherche à develloper un moteur de recherche d'emploi et à fait appel à votre expertise.
+Ils cherchent à construire un système permettant d'agréger des offres d'emplois à partir de données disponible sur l'Internet, à la fois rapidement et de manière innovante.
 L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adaptée pour lui.
 
-La source des donnée proviendra dans un premier temps d'un **flux RSS** du lien suivant: http://rss.jobsearch.monster.com/rssquery.ashx
-Ce lien (site?) permet notamment de filtrer les résultats à l'aide d'un champs textuel. Ce champs peut être renseigné en ajoutant à l'URL le paramètre `q` contenant la champs à chercher.
-Par exemple en effectuant une requête à l'URL : `http://rss.jobsearch.monster.com/rssquery.ashx?q=machine_learning`, qui va chercher les métiers traitants de "machine learning".
+Plusieurs pateforme existantes offrent des API permettant de rechercher des offres d'emplois.
+Cependant les données sont dispersés, hétérogènes et ne permettent pas de faire de l'offre adapté.
 
-Afin de récupérer un large nombre de fiches d'emploi pour alimenter notre base de données, nous allons faire une requête sur le flux RSS donné en utilisant des mot clés représentant les catégories des métiers provenant de l'open data (?). Vous devrez notamment agréger les terminologies présentées dans les deux catalogues suivants:
-* récupérer tout les termes uniques du "libellé ROME" : https://www.data.gouv.fr/fr/datasets/r/ccf8aec2-3463-414c-b9ed-1d416f2b7a96
-* récupérer tout les termes uniques du "libellé métier" : https://api.opendata.onisep.fr/downloads/5fa5949243f97/5fa5949243f97.json 
+Aujourd'hui M. Pontier cherche à exploiter un **flux RSS** à partir du lien suivant: http://rss.jobsearch.monster.com/rssquery.ashx?q=big data
 
-Muni de cette ensemble lexicale, vous êtes chargées de designer et implémenter un bot qui doit récupérer l'ensemble des fiches d'emploi pour chaque mot du lexique construit.
-(Attention! Limiter votre nombre de requêtes pour la phase de test pour ne pas vous faire banner du site cible!)
-Une bonne manière de construire ce bot est de respecter les caractéristiques suivantes: 
-* Le bot doit prendre comme paramètre (peu importe comment) le fichier lexical que vous avez construit
-* Pour chaque entrée de ce fichier lexical le bot doit extraire tout les documents présents dans le flux RSS avec chacun des champs présents (titre, description, etc).
-* Pour chaque document **UNIQUE** vous devez créer une entrée dans une base de données NoSQL orientée document (tel que MongoDB)
-* Insérer pour chaque document le terme de recherche avec la requête RSS à retourner (preciser)
+La mission consiste à exploiter ce lien pour récolter le maximum de fiche d'emploi et les stocker en Base De Donnée (BDD) afin de les rendres accessibles et facilliter l'ajout de nouveaux documents.
+Pour ce faire le client suggère l'utilisation d'une BDD **NoSQL** orienté document dans le but de faciliter:
+* l'ajout de nouveaux document avec des formats différents
+* la recherche d'information textuelles
 
-Finalement, vous devez créer une application simple (type client serveur) permettant d'accéder à votre base de donnée. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
+Enfin, le client souhaite créer une application client-serveur permettant à un utilisateur de rechercher les offres d'emploi dans sa BDD à partir de requetes **HTTP**.
 
-Comment pourrait-on mesurer la pertinence ?
+En conclusion, le client vous propose de designer et implémenter le systéme avec les caractéristiques suivantes:
+* une bot/programme en python pour récolter les données et les envoyer à la BDD. <!--(Attension: Limiter votre nombre de requêtes pour la phase de test pour ne pas vous faire bannir du site cible!)-->
+* Pour chaque document vous devez créer une entrée dans une BDD orienté document avec tout les champs présent (titre, description, etc)(le client suggére MongoDB) .
+* Chaque document inséré en BDD devra avoir un champ correspondant au terme de recherche utilisé lors de la requete au flux RSS.
+* le nombre d'elements dans la bdd doit être optimisé, c'est à dire que les doublons doivent être ecartés.
+* un application client-serveur doit permettre de faire des requetes à la BDD. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
+
 
 ### Bonus
 
+* Comment peut-on mesurer la pertinence pour le classement des documents ? Comment est-elle mesurer ?
 * retourner le nombre de document totale correspondant à une requêtes.
 * afficher la distribution (histogramme) de la répartition des offres d'emploi par métiers.
-* afficher les statistiques de votre base de donnée suivantes: Nombre de documents totale, nombre de mot unique totale dans l'ensemble des documents, nombre de mots non unique totale
+* afficher les statistiques de votre base de donnée: Nombre de documents totale, nombre de mot unique totale dans l'ensemble des documents, nombre de mots non unique totale
 * quelles sont les 20 mots les plus fréquents dans les offres d'emplois ? (En dehors des **stopwords**) le 10 bi-gram les plus fréquents ?
 * Combien d'offre d'emploi différent avez vous pu trouver sur Monster ? Pouvez vous augmentez ce nombre avec un lexique différent
-* Accélérer l'accès à votre base de donnée définissant des indexs.
 * créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
 
 
@@ -73,7 +75,7 @@ groupe: collaboration en trinôme
 
 ###### Jour1
 
-1. Découverte du sujet des groupes et de l'organisation didactique : 20 min pour laisser les groupes relire et discuter le brief ensemble, déterminer une feuille de route, puis point pour faire remonter les questions et regarder quelques feuille de route.
+1. Découverte du sujet des groupes et de l'organisation didactique : 30 min pour laisser les groupes relire et discuter le brief ensemble, déterminer une feuille de route, puis point pour faire remonter les questions et regarder quelques feuille de route.
 2. Installation de MongoDB guidé (le but n'est pas de perdre trop de temps à l'installation).
 
 ```markdown
@@ -108,20 +110,9 @@ groupe: collaboration en trinôme
 
 
 3. veilles MongoDB
-    * créer une collection
-    * insérer à la main 2 ou 3 fiche d'emploi à partir du résultat renvoyé par le flux RSS utiliser `db.my_collection.insert({...})`. 
-    * lister les documents de votre base à l'aide la function `db.my_collection.find`.
-    * effectuer des requete textuelle sur les document que vous avez insérer: voir la doc sur la recherche textuelle: https://docs.mongodb.com/manual/text-search/ 
-    * qu'est ce qu'un index ? comment mongo utilises les index et pourquoi ?
+4. stratégie pour récolter les données ?
+5. suite ?
 
-
-4. Créer le lexique de mots métiers.
-
-5. ...
-
-###### jour2
-
-à venir...
 
 ## Critére de perfomance
 
@@ -129,8 +120,8 @@ groupe: collaboration en trinôme
 * la moyenne d'avancement entre tout les groupes doit être maximale, et l'ecart type minimal
 
 
-**critére tech**
-* la rapidité de la réponse aux requêtes utilisateur. 
-* qualité du code (structure, commentaires et fonctionnalité)
-* qualité de l'interface utilisateur pour requeter le moteur de recherche
+**critère tech**
+* la rapidité d'executions des requêtes utilisateur. 
+* qualité du code (structure, commentaires et fonctionnalité).
+* qualité de l'interface utilisateur pour requeter le moteurs de recherche.
 
