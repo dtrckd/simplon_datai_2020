@@ -12,8 +12,8 @@ Construire un moteur de recherche d'emploi à partir de données bruts présente
 
 Face à la montée du chômage systémique lié aux perturbation sur le marché du travail, les demandeurs d'emploi vont drastiquement augmenter et les emplois evoluer.
 Cela va occasionner un fort besoin en recherche d'emploi.
-Dans ce contexte, M. Pontier CEO de la société FlashBot (fictif) cherche à develloper un moteur de recherche d'emploi et à fait appel à votre expertise.
-Ils cherchent à construire un système permettant d'agréger des offres d'emplois à partir de données disponible sur l'Internet, à la fois rapidement et de manière innovante.
+Dans ce contexte, M. Pontier CEO de la société FlashBot cherche à develloper un moteur de recherche d'emploi et à fait appel à votre expertise.
+Ils cherchent à construire un système permettant d'agréger des offres d'emploi à partir de données disponible sur l'Internet, à la fois rapidement et de manière innovante.
 L'objectif étant de faciliter la recherche d'emploi et de maximiser les chances qu'un demandeur d'emploi trouve une offre adaptée pour lui.
 
 Plusieurs pateforme existantes offrent des API permettant de rechercher des offres d'emplois.
@@ -36,15 +36,20 @@ En conclusion, le client vous propose de designer et implémenter le systéme av
 * un application client-serveur doit permettre de faire des requetes à la BDD. Notamment vous devez créer une page permettant de faire une recherche textuelle sur l'ensemble des documents récupérer et de retourner la liste des 10 premiers documents les plus pertinents.
 
 
-### Bonus
+### Bonus Tech
+* améliorer le retour d'une requete client a affichant le nombre de document totale qui ont matché une recherche
+* Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requete client: 
+    * nombre de documents totale,
+    * nombre de mot unique totale dans l'ensemble des documents,
+    * nombre de mots non unique totale
+* créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
 
+
+### Bonus Data
 * Comment peut-on mesurer la pertinence pour le classement des documents ? Comment est-elle mesurer ?
-* retourner le nombre de document totale correspondant à une requêtes.
 * afficher la distribution (histogramme) de la répartition des offres d'emploi par métiers.
-* afficher les statistiques de votre base de donnée: Nombre de documents totale, nombre de mot unique totale dans l'ensemble des documents, nombre de mots non unique totale
 * quelles sont les 20 mots les plus fréquents dans les offres d'emplois ? (En dehors des **stopwords**) le 10 bi-gram les plus fréquents ?
 * Combien d'offre d'emploi différent avez vous pu trouver sur Monster ? Pouvez vous augmentez ce nombre avec un lexique différent
-* créer un fichier requirements.txt permettant d'installer automatiquement les dépendances python.
 
 
 
@@ -63,7 +68,7 @@ scrapy:
 
 un git par apprenants avec les éléments suivants:
 1. le bot, qui doit pouvoir être lancé pour alimenter la base de données.
-2. le serveur, qui doit pouvoir être lancé et qui accessible depuis un navigateur.
+2. le serveur, qui doit pouvoir être lancé et servir (ie répondre) à des requetes HTTP.
 3. un fichier Readme.md qui décrit succinctement votre code et explique comment lancer votre programme, les éventuelles arguments et comment effectuer les requêtes de recherche.
 
 ## Modalité pédagogique
