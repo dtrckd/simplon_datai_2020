@@ -1,7 +1,7 @@
-# Construire un moteur de recherche d'emploi 
+# Construire un moteur de recherche d'emploi
 
-compétences: c1 c2 c3 c4 c5 c20
-Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data, client-serveur, URL, Requete HTTP
+compétences: c1 c2 c3 c4 c5 c20  
+Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data, client-serveur, URL, Requete HTTP  
 
 
 ## Description
@@ -37,7 +37,7 @@ En résumant, le client vous demande de designer et implémenter un systéme ave
 
 ### Bonus Tech
 * Améliorer le retour d'une requête client en affichant le nombre de document totale qui ont matché une recherche
-* Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requête client: 
+* Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requête client:
     * nombre de documents totale,
     * nombre de mots uniques totale dans l'ensemble des documents,
     * nombre de mots non uniques totale
@@ -54,9 +54,10 @@ En résumant, le client vous demande de designer et implémenter un systéme ave
 
 ## Ressources
 
-mongodb: 
+mongodb:
 * https://www.mongodb.com/
 * https://docs.mongodb.com/
+
 scrapy:
 * https://scrapy.org
 * https://docs.scrapy.org
@@ -97,7 +98,7 @@ groupe: collaboration en trinôme
 
     il suffit ensuite d'installer mongo avec la suivante suivante
 
-        docker run -d -p 27017:27017 -v ~/src/data/mongo-docker:/data/db --name mongodb mongo:4.2 
+        docker run -d -p 27017:27017 -v ~/src/data/mongo-docker:/data/db --name mongodb mongo:4.2
 
     ici, docker se charge d'installer tout le necessaire et de placer le tout dans un conteneur isolé.
 
@@ -124,7 +125,6 @@ groupe: collaboration en trinôme
 
 
 **critère tech**
-* la rapidité d'executions des requêtes utilisateur. 
+* la rapidité d'executions des requêtes utilisateur.
 * qualité du code (structure, commentaires et fonctionnalité).
 * qualité de l'interface utilisateur pour requeter le moteurs de recherche.
-
