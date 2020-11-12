@@ -1,7 +1,7 @@
 # Construire un moteur de recherche d'emploi 
 
-compétences: c3 c20 c2 c5 c2 c4 c1  
-Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data  
+compétences: c1 c2 c3 c4 c5 c20
+Keywords: Scraping, Scrapy, MongoDB, RSS, Flask, Open Data, client-serveur, URL, Requete HTTP
 
 
 ## Description
@@ -37,7 +37,7 @@ En conclusion, le client vous propose de designer et implémenter le systéme av
 
 
 ### Bonus Tech
-* améliorer le retour d'une requete client a affichant le nombre de document totale qui ont matché une recherche
+* améliorer le retour d'une requete client en affichant le nombre de document totale qui ont matché une recherche
 * Creer une nouvelle route dans votre serveur/backend pour afficher les statistiques de votre base de donnée depuis une requete client: 
     * nombre de documents totale,
     * nombre de mot unique totale dans l'ensemble des documents,
