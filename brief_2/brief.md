@@ -98,7 +98,7 @@ groupe: collaboration en trinôme
 
     il suffit ensuite d'installer mongo avec la suivante suivante
 
-        docker run -d -p 27017:27017 -v ~/src/data/mongo-docker:/data/db --name mongodb mongo:4.2
+        docker run -d -p 27017:27017 -v ~/data-mongodb:/data/db --name mongodb mongo:4.2 
 
     ici, docker se charge d'installer tout le necessaire et de placer le tout dans un conteneur isolé.
 
