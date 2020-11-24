@@ -1,5 +1,7 @@
 
-keywords:  numpy, scikit-learn, logistic regression, descente de gradient, optimisation.
+keywords: numpy, scikit-learn, logistic regression, descente de gradient, optimisation.
+
+# Detect hand-written digits with logistic regression and explore gradient descent
 
 # Description
 
@@ -8,7 +10,7 @@ Because he has thousands of documents, this will take far too long to do it manu
 
 Furthermore, Mr Pontier wants
 * to understand how the algorithm works,
-* compare the performance with several classification algorithms 
+* to compare the performance with several classification algorithms 
 * to observe the convergence of a grandient descent algorithm for further investigation.
 
 
@@ -69,6 +71,9 @@ To do so, we want to implement our own version of the Logistic regression infere
 What algorithm uses sklearn to estimate the model parameters for the logistic regression ?
 * What are the keys equations who need to implement the algorithm ?
 * what is the difference betwee the gradient descent and stochastic gradient descent ?
+
+Write the *pseudo-code* of the algorithm to be sure to understand all the different steps.
+https://fr.wikipedia.org/wiki/Pseudo-code
 
 Implement the gradient descent for the logistic regression.
 
