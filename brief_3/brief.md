@@ -62,15 +62,26 @@ Fit the model and show the performance results whithin a table for each models i
 
 How many input data the algorithms needs the be efficient (and why) ? 
 
-**4) Gradient descent ?**
+Compare the performance on the training set. What do you observe ?
+
+**4) Multi-class classification**
+
+Fit now the algorithm in the multiclass case (ie using all the the classes (target)).
+
+Show the result with
+* the confusion matrix (see sklearn.metrics.plot_confusion_matrix)
+* the classification report (see sklearn.metrics.classification_report)
+
+
+**5) Gradient descent ?**
 
 We want to observe the convergence of the performance.
 To do so, we want to implement our own version of the Logistic regression inference algorithm.
 
 > veille
 What algorithm uses sklearn to estimate the model parameters for the logistic regression ?
-* What are the keys equations who need to implement the algorithm ?
-* what is the difference betwee the gradient descent and stochastic gradient descent ?
+* What are the keys equations we need to implement the algorithm ?
+* what is the difference between the gradient descent and the stochastic gradient descent ?
 
 Write the *pseudo-code* of the algorithm to be sure to understand all the different steps.
 https://fr.wikipedia.org/wiki/Pseudo-code
