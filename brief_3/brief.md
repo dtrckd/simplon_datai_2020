@@ -1,8 +1,14 @@
 
 keywords:  numpy, scikit-learn, logistic regression, descente de gradient, optimisation.
 
+# Description
 
-# Organisation
+Mr Pontier is back and need your help. This times, he needs to automatically detect hand-written digits written on picture that represents the phone number of his clients and collaborator. Has he have thousands of document, this will take for too long to do it manually. This is why he asked you if you can design an algorithm that automatically detect the number from the picture.
+
+Furthermore, Mr Pontier wants to understand how the algorithm works, and wants to observe the convergence for further improvments.
+
+
+# Proposed Plan
 
 **1) Get and understand your data**
 
@@ -28,7 +34,7 @@ How do evaluate classification algorithms ?
 * Write the equation of the **precision** and **recall** score and explicit what each terms represents.
 * explain the purpose of the training set ?
 * explain the prpose of the testing set ?
-* the randomization of the data ?
+<!--* the randomization of the data ?-->
 
 
 What does the `train_test_split` function in sklearn do ?
@@ -39,13 +45,16 @@ check that the ratio is correct.
 
 **3) Predict Digits**
 
-Predict one digit (for exemple `7`) with a logistic regression algorihmn plus (at least) **two** others of your choices. 
+In the dataset we have multiple label. Therefore, to start we will predict in a binary case. It meansthat that we will predict only if an image is a given digit (for exemple `7`) or not.
 
-Show the performance results whithin a table for each models in terms of:
+To do that we will a **logistic regression** algorithm plus (at least) **two** others of your choices. 
+
+Fit the model and show the performance results whithin a table for each models in terms of:
 * the **precision** score on the testing set 
 * the **recall** score on the testing set
 * the inference time for each algorithm
-* how many data the algorithms needs the be efficient (and why) ? 
+
+How many input data the algorithms needs the be efficient (and why) ? 
 
 **4) Gradient descent ?**
 
