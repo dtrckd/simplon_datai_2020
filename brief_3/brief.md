@@ -51,9 +51,9 @@ check that the ratio is correct.
 
 **3) Predict Digits**
 
-In the dataset we have multiple label. Therefore, to start we will predict in a binary case. It meansthat that we will predict only if an image is a given digit (for exemple `7`) or not.
+In the dataset we have multiple labels. Therefore, to start we will predict in a binary case. It means that that we will predict only if an image is a given digit (for exemple `7`) or not.
 
-To do that we will a **logistic regression** algorithm plus (at least) **two** others of your choices. 
+To do so, we will a **logistic regression** algorithm plus (at least) **two** others of your choices. 
 
 Fit the model and show the performance results whithin a table for each models in terms of:
 * the **precision** score on the testing set 
