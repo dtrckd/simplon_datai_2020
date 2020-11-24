@@ -3,16 +3,20 @@ keywords:  numpy, scikit-learn, logistic regression, descente de gradient, optim
 
 # Description
 
-Mr Pontier is back and need your help. This times, he needs to automatically detect hand-written digits written on picture that represents the phone number of his clients and collaborator. Has he have thousands of document, this will take for too long to do it manually. This is why he asked you if you can design an algorithm that automatically detect the number from the picture.
+Mr Pontier is back and needs your help. This times, he needs to automatically detect hand-written digits written on pictures that represents the phone numbers of his clients and collaborators.
+Because he has thousands of documents, this will take far too long to do it manually. This is why he asked you if you can design an algorithm that automatically detect the number from the pictures.
 
-Furthermore, Mr Pontier wants to understand how the algorithm works, and wants to observe the convergence for further improvments.
+Furthermore, Mr Pontier wants
+* to understand how the algorithm works,
+* compare the performance with several classification algorithms 
+* to observe the convergence of a grandient descent algorithm for further investigation.
 
 
 # Proposed Plan
 
 **1) Get and understand your data**
 
-git clone the repository and run the given notebook.
+git clone the repository and run the given notebook in https://github.com/dtrckd/simplon_datai_2020/blob/master/brief_3/.
 
 what is the type of the data ?
 
@@ -24,7 +28,7 @@ What is the type of data of one pixel ? what does it represents ?
 **2) Prepare your ML algorithm**
 
 > Veille
-How do evaluate classification algorithms ?
+How to evaluate classification algorithms ?
 * https://scikit-learn.org
 * wikipedia
 * towards data science
@@ -58,11 +62,16 @@ How many input data the algorithms needs the be efficient (and why) ?
 
 **4) Gradient descent ?**
 
-> veille
-What algorithm uses sklearn to estimate the model parameters for the logistic regression ?
-
 We want to observe the convergence of the performance.
 To do so, we want to implement our own version of the Logistic regression inference algorithm.
+
+> veille
+What algorithm uses sklearn to estimate the model parameters for the logistic regression ?
+* What are the keys equations who need to implement the algorithm ?
+* what is the difference betwee the gradient descent and stochastic gradient descent ?
+
+Implement the gradient descent for the logistic regression.
+
 
 Show the convergence of the performance results with two graphics:
 * the **precision** score on testing set AND training set 
@@ -71,5 +80,3 @@ Show the convergence of the performance results with two graphics:
 
 What is the impact of the learning rate on the convergence ?
 What difference do you observe on the results between the training set and testing set
-
-
