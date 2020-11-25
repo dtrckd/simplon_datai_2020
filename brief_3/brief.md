@@ -96,3 +96,8 @@ Show the convergence of the performance results with two graphics:
 
 What is the impact of the learning rate on the convergence ?
 What difference do you observe on the results between the training set and testing set
+
+Compare the convergence and performance with the stochastic gradient descent for the logistic regression.
+
+How can be used in the Hessian matrix ?
+
