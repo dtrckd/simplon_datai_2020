@@ -58,7 +58,7 @@ https://towardsdatascience.com/introduction-to-natural-language-processing-for-t
 
 **2) Load, clean and prepare the data**
 
-Vectoriser et netoyer vos données.
+Vectoriser et nettoyer vos données.
 https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction
 
 Quelle est le type Python de vos données après vectorisation.
