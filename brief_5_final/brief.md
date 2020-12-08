@@ -37,18 +37,20 @@ Vos travaux devront être “poussés” sur Github au plus tard le Jeudi 17 Dé
 
 Créer une application client/serveur permettant à un utilisateur d'envoyer du texte via un champs de recherche (ou un fichier sur le disque du client) et de lui renvoyer l'émotion du texte envoyé.
 
-## Livrables
+
+## Livrables
 
 * notebook résumant votre travaille
 * ressource heroku
 * (bonus) votre application client/serveur
 
-## Modalité pédagogique
+## Modalité pédagogique
 
 Travaille en groupe de 5/6 + roles  
 durée: 7 jours
 
-## ressources
+
+## ressources
 
 * https://www.actuia.com/contribution/victorbigand/tutoriel-tal-pour-les-debutants-classification-de-texte/
 * https://bbengfort.github.io/tutorials/2016/05/19/text-classification-nltk-sckit-learn.html
