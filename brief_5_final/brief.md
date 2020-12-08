@@ -37,7 +37,7 @@ Vos travaux devront être “poussés” sur Github au plus tard le Jeudi 17 Dé
 
 Créer une application client/serveur permettant à un utilisateur d'envoyer du texte via un champs de recherche (ou un fichier sur le disque du client) et de lui renvoyer l'émotion du texte envoyé.
 
-## Livrable
+## Livrables
 
 * notebook résumant votre travaille
 * ressource heroku
