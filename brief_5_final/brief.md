@@ -35,7 +35,9 @@ Vos travaux devront être “poussés” sur Github au plus tard le Jeudi 17 Dé
 
 **BONUS**
 
-Créer une application client/serveur permettant à un utilisateur d'envoyer du texte via un champs de recherche (ou un fichier sur le disque du client) et de lui renvoyer l'émotion du texte envoyé.
+Créer une application client/serveur permettant à un utilisateur d'envoyer du texte via un champs de recherche (ou un fichier sur le disque du client) et de lui renvoyer
+1. l'émotion du texte envoyé.
+2. (bonus du bonus) la roue des émotions du document (exemple: quelle proportion de chacune des émotions contient le document ?)
 
 
 ## Livrables
