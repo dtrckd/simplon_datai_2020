@@ -1,4 +1,4 @@
-# Construire un moteur de recherche d'emploi
+# Clustering with K-means
 
 compétences: c1 c2 c3 c4 c5 c20
 Keywords: Unsupervised Learning, Clustering, Kmeans.
