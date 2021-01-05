@@ -32,6 +32,7 @@ Quelle sont les métrique utilisé pour le clustering ?
 
 * https://le-datascientist.fr/apprentissage-supervise-vs-non-supervise
 * https://realpython.com/k-means-clustering-python/#writing-your-first-k-means-clustering-code-in-python
+* (fr) https://mrmint.fr/algorithme-k-means
 * https://scikit-learn.org/stable/modules/clustering.html#clustering
 * https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation
 
