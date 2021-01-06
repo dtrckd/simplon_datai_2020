@@ -1,6 +1,12 @@
 # Clustering with K-means
 
-compétences: c9 c14?  c5 c8
+compétences:
+c4 : get the data from previous script
+c5 : utilisation de kmeans
+c6 : allez plus loin avec les données texte (utilisatio nde la PCA)
+c8 : tunage de kmeans et PCA
+
+ c9 c14?  c5 c8
 Keywords: Unsupervised Learning, Clustering, Kmeans.
 
 ## Description
@@ -28,8 +34,8 @@ Question de veilles:
 * différence entre NMI et AMI ?
 
 Tache abordée
-* visualisation des clusters en 2 ou 3D via lemploi des algorithmes de réduction de dimensions
-* recherche du numbre cluster optimaux aux regards de l'inertie et la silouhette.
+* visualisation des clusters en 2 ou 3D via l'emploi des algorithmes de réduction de dimensions
+* recherche du nombre cluster optimaux aux regards de l'inertie et la silhouette.
 * etude de la qualité de clusters avec un vérité terrain
 
 
