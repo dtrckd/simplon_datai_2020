@@ -9,11 +9,11 @@ Découvrir l'apprentissage non-supervisé au travers de l'algorithme K-means.
 
 ## Contexte
 
-L'apprentissage supervisé ce présente comme une approche de l'apprentissage automatique qui permet de découvrir la structure sous-jacente des données en l'absence d'étiquetage, c'est à dire sans catégories ou classe connue en avance.
+L'apprentissage supervisé ce présente comme une approche de l'apprentissage automatique qui permet de découvrir la structure sous-jacente des données en l'absence d'étiquetage, c'est à dire sans catégories ou classe connues en avance.
 
-Afin de se familiariser avec cette approche et mieux l'appréhender pour l'utiliser dans des scénario plus complexe, les objectifs sont les suivants : 
+Afin de se familiariser avec cette approche et mieux l'appréhender pour l'utiliser dans des scénario plus complexes, les objectifs sont les suivants : 
 * Nous souhaitons comprendre le principe de cette technique et les scénarios d'utilisation
-* Expérimenter et évaluer un algorithme de cet classe de problème d'apprentissage : les  K-moyennes (ou K-means) sur un jeu de données simple.
+* Comprendre, expérimenter et évaluer un algorithme de cette classe de problème d'apprentissage : les  K-moyennes (ou K-means) sur un jeu de données simple.
 * Comprendre et comparer les métrique d'évaluation en jeux
 * tester sur des jeux précédemment utilisé de classification, la capacité de l'algorithme à retrouver les catégories de prédiction.
 
@@ -23,9 +23,14 @@ Question de veilles:
 * Qu'est ce que le clustering ?
 * Est ce un probleme difficile  ? pourquoi ? Donnez la compléxité en temps et mémoire 
 * Quelle sont les métriques utilisés pour le clustering ?
-* Ecrivez en une phrase votre compréhension pour 3 métrique métrique ground truth (dont MNI) 3 sans ground truth (dont silouhette)
-	* donner en une phrase l'intuition derrièr ces mesure.
-* différenc entre NMI et AMI ?
+* Ecrivez en une phrase votre compréhension pour 3 métrique métrique avec ground truth (dont MNI) 3 sans ground truth (dont silouhette)
+	* donner en une phrase l'intuition derrière ces mesures.
+* différence entre NMI et AMI ?
+
+Tache abordée
+* visualisation des clusters en 2 ou 3D via lemploi des algorithmes de réduction de dimensions
+* recherche du numbre cluster optimaux aux regards de l'inertie et la silouhette.
+* etude de la qualité de clusters avec un vérité terrain
 
 
 ## Ressources
