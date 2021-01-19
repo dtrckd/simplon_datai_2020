@@ -1,9 +1,9 @@
 
-# Recommander Systems
+# Recommander Systems
 
 Construire, comprendre et tuner un système de recommandation.
 
-# Description
+# Description
 
 ## Familarisation
 
@@ -23,14 +23,14 @@ Quelle est la complexité en mémoire de cette opération ?
 Cela rentre t'il sur votre machine ?
 
 Qu'essaye de faire l'auteur avec ce calcul ?
-Comment pouvons-nous contourner ce probléme ?
+Comment pouvons-nous contourner ce problème ?
 
 
 **step2 : content based recommander**
 
-implémenter la deuxiéme partie en evitant le produit de matrice.
+implémenter la deuxiéme partie en évitant le produit de matrice.
 
-**step3 : aùalioration**
+**step3 : amélioration**
 
 coder les 2 améliorations :
 1. Introduce a popularity filter: this recommender would take the 30 most similar movies, calculate the weighted ratings (using the IMDB formula from above), sort movies based on this rating, and return the top 10 movies.
