@@ -49,7 +49,7 @@ Pour l'évaluation, il souhaite comparer la mesure AUC, la précision et le rapp
 
 #### Bonus 1
 
-Comparé les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
+Comparer les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
 
 
 #### Bonus 2
