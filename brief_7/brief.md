@@ -71,3 +71,5 @@ Qu'est ce un système de recommandation dit à "implicit feedback" ? Et a "expli
 LightFM: https://github.com/lyst/lightfm
 
 Jeux de données Last.fm : https://grouplens.org/datasets/hetrec-2011/
+
+The world is large and we know just a small part of it, dont forget the big picture: https://github.com/jihoo-kim/awesome-RecSys
