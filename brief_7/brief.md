@@ -42,19 +42,19 @@ coder les 2 améliorations :
 M. Pontier vous contact pour l'aider à construire un système de recommandation. Il dispose d'une base de données comportant des données concernant ses utilisateurs (anonymisé) contenant les artistes qu'ils écoutent sur sa plateforme ainsi que le nombre d'écoutes. Monsieur pontier souhaite recommander à ses utilisateur  des artistes qu'il n'ont pas encore écoutés, et cela en fonction de leurs préférences musicale.
 
 Monsieur pontier souhaite utiliser la librairie Lightfm, avec laquelle il a déjà un driver permettant de charger ses données qu'il vous fournit, un vrai bonus.
-Monsieur Pontier à pu voir que la documentation comporte plusieurs modèle, il souhaite évaluer les modèle sur une jeux de train/test et utiliser le meilleurs modéle.
+Monsieur Pontier à pu voir que la documentation comporte plusieurs modèle, il souhaite évaluer les modèle sur une jeux de trainet test et utiliser le meilleurs modéle.
 
-Pour l'évaluation, il souhaite comparer la mesure AUC, la précision et le rappel (visiter la documentation de Lightfm), qui devront être présenté dans un tableau.
-
-
-#### Bonus 1
-
-Comparer les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
+Pour l'évaluation, il souhaite comparer la mesure AUC, la précision et le rappel (visiter la documentation de Lightfm), qui devront être présenté dans un tableau. (donnée les valeurs pour le jeux de train ET de test, comparer)
 
 
-#### Bonus 2
+#### Bonus
 
-L'apprentissage devant être le plus rapide possible tout en obtenant les meilleurs résultats, il vous est demandé de trouver le nombre d'itération permettant d'atteindre la convergence de 95% de la valeur maximal d'AUC sur le jeux de test.
+* Comparer les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
+* L'apprentissage devant être le plus rapide possible tout en obtenant les meilleurs résultats, il vous est demandé de trouver le nombre d'itération permettant d'atteindre la convergence de 95% de la valeur maximal d'AUC sur le jeux de test.
+-- 
+* clutering des artists avec les embeddings
+* optimization des hyper-paramètres
+
 
 
 ### Veille
