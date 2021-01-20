@@ -34,9 +34,39 @@ implémenter la deuxiéme partie en évitant le produit de matrice.
 
 coder les 2 améliorations :
 1. Introduce a popularity filter: this recommender would take the 30 most similar movies, calculate the weighted ratings (using the IMDB formula from above), sort movies based on this rating, and return the top 10 movies.
-2. Other crew members: other crew member names, such as screenwriters and producers, could also be included.
+2. Use the PCA to improve the speed of your similarity search with 100 components. Does the result are coherent.
 
 
 ## LastFM Project
 
-to come...
+M. Pontier vous contact pour l'aider à construire un système de recommandation. Il dispose d'une base de données comportant des données concernant ses utilisateurs (anonymisé) contenant les artistes qu'ils écoutent sur sa plateforme ainsi que le nombre d'écoutes. Monsieur pontier souhaite recommander à ses utilisateur  des artistes qu'il n'ont pas encore écoutés, et cela en fonction de leurs préférences musicale.
+
+Monsieur pontier souhaite utiliser la librairie Lightfm, avec laquelle il a déjà un driver permettant de charger ses données qu'il vous fournit, un vrai bonus.
+Monsieur Pontier à pu voir que la documentation comporte plusieurs modèle, il souhaite évaluer les modèle sur une jeux de train/test et utiliser le meilleurs modéle.
+
+Pour l'évaluation, il souhaite comparer la mesure AUC, la précision et le rappel (visiter la documentation de Lightfm), qui devront être présenté dans un tableau.
+
+
+#### Bonus 1
+
+Comparé les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
+
+
+#### Bonus 2
+
+L'apprentissage devant être le plus rapide possible tout en obtenant les meilleurs résultats, il vous est demandé de trouver le nombre d'itération permettant d'atteindre la convergence de 95% de la valeur maximal d'AUC sur le jeux de test.
+
+
+### Veille
+
+Quelle système de recommandation allez vous mettre en place ?
+
+Qu'est ce que Lightfm ?
+
+Qu'est ce un système de recommandation dit à "implicit feedback" ? Et a "explicit feedback ?
+
+
+### Ressources: 
+
+LightFM: https://github.com/lyst/lightfm
+Jeux de données Last.fm : https://grouplens.org/datasets/hetrec-2011/
