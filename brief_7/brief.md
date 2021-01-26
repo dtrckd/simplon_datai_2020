@@ -50,6 +50,8 @@ Pour l'évaluation, il souhaite comparer la mesure AUC, la précision et le rapp
 
 :warning: le train et test set ont une forme un peu différente de ce qu'on a l'habitude de voir, donc regardez leurs shape et e<nquêter sur ce que c'est/ce qu'ils représentent 
 
+**Part 1**
+
 Voici deux sous taches supplémentaire qui vont nous aider à evaluer/interpréter notre modéle, après l'obtention des tableaux de résultats : 
 * faire la fonction get_recommandation qui prend en entrée un User et renvoie les Artists recommandé (du meilleurs au moins bon au sens du score de recommandation)
 * get_ground_truth qui renvoie les artistes ecoutés par un utilisateur par ordre décroissant du playCountScaled
@@ -57,13 +59,21 @@ Voici deux sous taches supplémentaire qui vont nous aider à evaluer/interprét
 Ceci nous permettra d"evaluer qualitatement les résultats que retourne le modéle et le comparer avec la vérité terrain
 
 
-#### Bonus
+**Part 2**
 
 * Comparer les résulats de l'AUC avec le meilleurs modéle de lightfm et une PCA (TruncatedSDV).
 * L'apprentissage devant être le plus rapide possible tout en obtenant les meilleurs résultats, il vous est demandé de trouver le nombre d'itération permettant d'atteindre la convergence de 95% de la valeur maximal d'AUC sur le jeux de test.
 -- 
-* clutering des artists avec les embeddings
 * optimization des hyper-paramètres (k, n, learning_schedule, learning_rate)
+* clutering des artists avec les embeddings: tracer un visuelle des clusteriung d'artist basé sur la matrice **d'item embeddings**.
+
+**Part 3**
+(à voir mercredi,  à compléter)
+
+* Faire une application client serveur permettant d'interoger le modéle
+* 1 page pour connaitre/demander connaitre les préférences d'un utilisateur
+* 1 page qui compare quelle les 10 artistes les plus écouté et les 10 artiste les plus recommander (afficher aussi la distribution des artistes recommandé, en prenant seulement les 5 meilleurs artiste par utilisateur.
+
 
 
 
