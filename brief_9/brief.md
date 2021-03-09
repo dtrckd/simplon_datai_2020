@@ -1,4 +1,4 @@
-Neural Network and Perceptron
+# Neural Network,  Perceptron, Keras and more
 
 Etude du perceptron
 
@@ -9,12 +9,12 @@ Etudier et reproduire les 2 tutos, de regréssion linéaire et non-linéaire de 
 * https://lucidar.me/fr/neural-networks/curve-fitting-nonlinear-regression/
 
 Exercices poursuivant le tuto de régression non-linéaire : 
+
 * Modifier le nombre de layer cachée et de nombre d'unit sur les layer : qu'observer vous au niveaux des performances (utiliser la MSE)
 * Trouver un moyen d'afficher la convergences du modéles aux cours des itérations (afficher le dans un graphique).
 * Modifier le modéle pour pouvoir apprendr le modéle sur des données en deux dimensions (un plan) (afficher ce plan et la version apprise du modéle.)
 
-
-# Veilles
+# Veilles
 
 activation function
 
@@ -27,6 +27,7 @@ hidden layer/design
 * https://towardsdatascience.com/beginners-ask-how-many-hidden-layers-neurons-to-use-in-artificial-neural-networks-51466afa0d3e
 
 Dropout /Regularisation
+
 * https://stackoverflow.com/questions/53893206/how-to-create-a-sparse-layer-in-keras-i-e-not-all-neurons-are-connected-to-eac
 * https://keras.io/api/layers/regularization_layers/dropout/
 
