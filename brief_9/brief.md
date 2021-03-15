@@ -1,4 +1,4 @@
-# Neural Network,  Perceptron, Keras and more
+# Neural Network, Perceptron, Keras and more
 
 Etude du perceptron
 
@@ -10,7 +10,7 @@ Etudier et reproduire les 2 tutos, de regréssion linéaire et non-linéaire de 
 
 Exercices poursuivant le tuto de régression non-linéaire : 
 
-* Modifier le nombre de layer cachée et de nombre d'unit sur les layer : qu'observer vous au niveaux des performances (utiliser la MSE)
+* Modifier le nombre de layer cachée et de nombre d'unit sur les layer : qu'observez vous au niveaux des performances (utiliser la MSE)
 * Trouver un moyen d'afficher la convergences du modéles aux cours des itérations (afficher le dans un graphique).
 * Modifier le modéle pour pouvoir apprendr le modéle sur des données en deux dimensions (un plan) (afficher ce plan et la version apprise du modéle.)
 
