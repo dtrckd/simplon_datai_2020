@@ -1,9 +1,12 @@
 # Word-embedding avec Keras
 
 
+
+
 **Decouverte du word-embedding**
 
-Explorer la couche Embeding (Word embedding) de Keras sur votre jeux de classification de texte (émotions)
+Explorer la couche Embeding (Word embedding) de Keras sur votre jeux de classification de texte (émotions) en s'appuyant sur la ressource suivante : 
+https://realpython.com/python-keras-text-classification/
 
 Quelle est l'impact de cette couche sur vos résultats d'entrainement ? 
 
