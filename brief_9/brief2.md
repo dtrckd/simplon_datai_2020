@@ -1,4 +1,3 @@
-
 # Word-embedding avec Keras
 
 
@@ -26,6 +25,7 @@ Extraire la matrice d'embedding et le dictionnaire de mappig des mots.
 * Comment calculer la similarité entre deux mots ?
 
 **Pre-trained model**
+
 Utiliser un modéle d'embedding pré-entrainer (https://nlp.stanford.edu/projects/glove/), pour initialiser vos poids.
 - Explisuqer le role du paramètre `trainable` ?
 - Quelle est l'impact sur les performance ?
@@ -41,12 +41,12 @@ ressources:
 ## Model explanation
 
 - rétrospective sur le modèle de Deep learning, alignement, et brainstorm des améliorations possibles en terme de preprocesing et paramétrage.
-- Ecriture d'un fonction permettant de prédire la classe d'un document avec le modèle. (rediscussion de l'interpétation de la fonction de sortie (signmoid, softmax, linear). 
+- Ecriture d'un fonction permettant de prédire la classe d'un document avec le modèle. (rediscussion de l'interpétation de la fonction de sortie (sigmoid, softmax, linear). 
 - veilles sur Lime et Shap
     * https://github.com/marcotcr/lime
     * https://github.com/slundberg/shap
 - utiliser lime pour prédire la classification d'un document quelconque
-- réaliser une enquête pour expliquer les features qui impact le modéle positivement et négativement (extrayez un certaine nombre de document bien classer et mal classé pour chaque classe). Proposez des idées d'améliorations.
+- réaliser une enquête pour expliquer les features qui impact le modéle positivement et négativement (extrayez un certain nombre de document bien classé et mal classé pour chaque classe). Proposez des idées d'améliorations.
 
 Bonus1: même exercice avec shap.
 Bonus2: implementer vos améliorations.
