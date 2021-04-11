@@ -13,7 +13,7 @@ Vous devez développer un jeu de “puissance 4” similaire au jeu “4 in a ro
 * humain contre IA
 * IA contre IA.
 
-L’IA doit proposer plusieurs niveaux de difficulté. La taille de la grille doit être paramétrable. Deux IA doivent être proposé, une aléatoire, et une autre entrainé par renforcement. (voir section IA)
+L’IA doit proposer plusieurs niveaux de difficulté. La taille de la grille doit être paramétrable. Deux IA doivent être proposées, une aléatoire, et une autre entraînées par renforcement. (voir section IA)
 
 
 ## Structure
@@ -31,8 +31,8 @@ Le programme doit pouvoir être exécuté depuis un programme python simple (c'e
 Votre programme doit supporter plusieurs paramètres en ligne de commande permettant de : 
 
 * choisir le mode de jeu.
-* définir les dimensions du plateaux.
-* BONUS: options pour entrainer votre IA.
+* définir les dimensions du plateau.
+* BONUS: options pour entraîner votre IA.
 
 exemple de commandes: 
 
@@ -48,19 +48,19 @@ L'algorithme par renforcement permet à un agent d'apprendre une stratégie de j
 
 L'objectif est d'implémenter un algorithme de type "off-policy" et "model-free". De plus nous souhaitons développer une approche type "deep reinforcement learning" afin de s'abstraire d'un connaissance exhaustive de l'ensemble de nombre d'états de jeux pour permettre un passage à l'échelle.
 
-* Vous devez fournir une statistique de votre IA entrainée par renforcement : 
-    - proportion de partie gagné
-    - évolution du nombre de coup des parties
-    - évolution de la loss de votre modèle
+* Vous devez fournir une statistique de votre IA entraînée par renforcement : 
+    - Proportion de parties gagnées
+    - Evolution du nombre de coups des parties
+    - Evolution de la loss de votre modèle
 
-## Test Unitaires et Fonctionnels
+## Tests Unitaires et Fonctionnels
 
-Les testent permettent de vérifier un programme selon différent critère. Les test unitaires et fonctionnels, permettent d'automatiser la vérification de fonction et de scenario d'un programme automatiquement pour assurer qu'un cahier des charges est respecté (cad que le code fait bien ce qu'il est supposé faire). Cela permet notamment de faciliter la détection et la correction de bug lors de mise à jours ou de modification du code.
+Les tests permettent de vérifier un programme selon différents critères. Les tests unitaires et fonctionnels permettent d'automatiser la vérification de fonctions et de scénarios d'un programme automatiquement pour assurer qu'un cahier des charges est respecté (cad que le code fait bien ce qu'il est supposé faire). Cela permet notamment de faciliter la détection et la correction de bugs lors de mises à jours ou de modifications du code.
 
 * Testez au moins deux fonctions critiques de votre code.
-* Réalisez des test unitaires pour vérifier que le jeux détectes correctement les puissances 4.
+* Réalisez des tests unitaires pour vérifier que le jeu détecte correctement les puissances 4.
 
-Vos test doivent pouvoir être lancé depuis un script différent. Par exemple depuis un Makefile (e.g `make test`) ou depuis un script (e.g. `./test.py`).
+Vos tests doivent pouvoir être lancé depuis un script différent. Par exemple depuis un Makefile (e.g `make test`) ou depuis un script (e.g. `./test.py`).
 
 ## Documentation
 
@@ -68,12 +68,12 @@ Vous devez fournir une documentation **utilisateur** minimal. L'utilisation d'un
 
 # Modalité pédagogique 
 
-Travaille en agence de développement.
+Travail en agence de développement.
 Organisation Agile/Scrum.
 
-# Critére de performance
+# Critère de performance
 
-Tournoi ou les bot des différentes agences s'affronteront.
+Tournois où les bot des différentes agences s'affrontent.
 
 # Ressources
 
