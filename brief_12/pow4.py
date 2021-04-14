@@ -29,9 +29,9 @@ def match(game1, game2):
 
 Game
 ----
+-> reset () -> reset the board
 -> get_board () -> returns the array representing the board.
 -> play_one (value, player, [board]) -> returns the new state, the reward and the terminal state.
--> reset () -> reset the board
 
 Player
 ------
@@ -47,10 +47,10 @@ class Game():
         self.player1 = Player("human") # Use case example
         self.player2 = Player("dqn_bot")
 
-    def self.reset():
+    def reset(self):
         self.board = np.zeros(...)
 
-    def get_board()
+    def get_board(self):
         return self.board
 
     def play_one(self, value, player, board=None):
@@ -62,6 +62,10 @@ class Game():
 
 
 class Player():
+
+    def act(self, state):
+        ...
+        return a
 
     def play(self, value, a):
         '''
