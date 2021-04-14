@@ -42,8 +42,8 @@ Player
 
 class Game():
 
-	def __init__(self):
-		self.reset()
+    def __init__(self):
+        self.reset()
         self.player1 = Player("human") # Use case example
         self.player2 = Player("dqn_bot")
 
@@ -91,20 +91,20 @@ class Player():
 
 def train():
     for game in range(1000):
-		cur_state = game.reset()
-		for step in range(1000):
+        cur_state = game.reset()
+        for step in range(1000):
 
-			new_state, reward, terminal = game.play_one(1, game.player1)
+            new_state, reward, terminal = game.play_one(1, game.player1)
             if not terminal:
                 new_state, reward, terminal = game.play_one(-1, game.player2)
                 reward = -reward
 
             # train the player
-			dqn_agent.remember(cur_state, action, reward, new_state, terminal)
-			dqn_agent.replay()       # internally iterates default (prediction) model
-			dqn_agent.target_train() # iterates target model
+            dqn_agent.remember(cur_state, action, reward, new_state, terminal)
+            dqn_agent.replay()       # internally iterates default (prediction) model
+            dqn_agent.target_train() # iterates target model
 
-			cur_state = new_state
-			if terminal:
-				break
+            cur_state = new_state
+            if terminal:
+                break
 
