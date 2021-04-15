@@ -3,10 +3,6 @@ import sys
 
 class Tournament():
     ''' Code to run the tournament
-
-        usage exemple :
-        game1 = MyGame() # MyGame can be the name of your classes
-        game2 = MyGame()
     '''
 
     games = [
@@ -58,8 +54,8 @@ class Tournament():
                 # Don't run match against oneself
                 continue
 
-            game1 = self.games[l]["class"]()
-            game2 = self.games[c]["class"]()
+            game1 = self.games[l]["class"]("dqnxr")
+            game2 = self.games[c]["class"]("dqnxr")
             res = self.match(game1, game2)
             result[c, l, res] += 1
 
