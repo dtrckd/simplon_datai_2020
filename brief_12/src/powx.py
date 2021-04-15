@@ -29,7 +29,7 @@ class Tournament():
     ]
 
     def __init__(self):
-        # Load all module and class from games repo
+        # Load all modules and classes from game repos
         for g in self.games:
             sys.path.append(g["path"])
             module = __import__(g["module_name"])
@@ -42,13 +42,13 @@ class Tournament():
             each game start to play once.
         '''
         tournament_shape = (len(self.games), len(self.games))
-        # There is 3 features in the last dimension:
+        # There are 3 features in the last dimension:
         # [i][j][0] -> games[i] number of wins
         # [i][j][1] -> games[j] number of wins
         # [i][j][2] -> match nul
         result = np.zeros((tournament_shape[0], tournament_shape[1], 3))
         for i in range(np.multiply(tournament_shape)):
-            # get the line and coluln index from flat index
+            # get the line and column index from the flat index
             c, l = np.unravel_index(i, tournament_shape)
             if c == l:
                 # Don't run match against oneself
@@ -69,11 +69,9 @@ class Tournament():
             2 game2 win
             3 nul
         '''
-
         i = 0
         board = None
         while i < 1000:
-
             state, reward, terminal = game1.play_one(1, game1.player1, game2.get_board())
             if reward == 1:
                 return 1
@@ -182,7 +180,7 @@ def train():
     for game in range(1000):
         cur_state = game.reset()
         for step in range(1000):
-
+            # Interact with the environement and get the reward.
             new_state, reward, terminal = game.play_one(1, dqn_agent)
             if not terminal:
                 new_state, reward, terminal = game.play_one(-1, game.player2)
