@@ -37,10 +37,9 @@ class Tournament():
             # test instanciantion
             g['class']()
 
-    def run(self):
-        ''' One tournament round. Everyone play againt each other 100 times.
+    def run(self, match_per_round=100):
+        ''' One tournament round. Everyone play againt each other 'match_per_round' times.
         '''
-        match_per_round = 100
         tournament_shape = (len(self.games), len(self.games))
         # There are 3 features in the last dimension:
         # [i][j][0] -> games[i] number of wins
@@ -54,16 +53,21 @@ class Tournament():
                 # Don't run match against oneself
                 continue
 
-            game1 = self.games[l]["class"]("dqnxr")
-            game2 = self.games[c]["class"]("dqnxr")
-            res = self.match(game1, game2, match_per_round)
-            result[c, l, res] += 1
+            i = 0
+            while i < match_per_round:
+                game1 = self.games[l]["class"]("dqnxr")
+                game2 = self.games[c]["class"]("dqnxr")
+                res = self.match(game1, game2, match_per_round)
+
+                result[c, l, res] += 1
+                i += 1
+
 
         print("Tournament result")
         # @TODO: Sumarize the result in a table
         print(result)
 
-    def match(self, game1, game2, nruns=1):
+    def match(self, game1, game2, max_hit=2000):
         '''Returns
             0 game1 win
             1 game2 win
@@ -71,7 +75,7 @@ class Tournament():
         '''
         i = 0
         board = None
-        while i < nruns:
+        while i < max_hit:
             state, reward, terminal = game1.play_one(1, game1.player1, game2.get_board())
             if reward == 1:
                 return 0
