@@ -65,28 +65,28 @@ class Tournament():
 
     def match(self, game1, game2, nruns=1):
         '''Returns
-            1 game1 win
-            2 game2 win
-            3 nul
+            0 game1 win
+            1 game2 win
+            2 nul
         '''
         i = 0
         board = None
         while i < nruns:
             state, reward, terminal = game1.play_one(1, game1.player1, game2.get_board())
             if reward == 1:
-                return 1
+                return 0
             if terminal:
-                return 3
+                return 2
 
             state, reward, terminal = game2.play_one(-1, game2.player1, game1.get_board())
             if reward == 1:
-                return 2
+                return 1
             if terminal:
-                return 0
+                return 2
 
             i += 1
 
-        return 0
+        return 2
 
 
 class MyGame():
