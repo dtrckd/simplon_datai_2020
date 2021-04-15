@@ -57,7 +57,7 @@ class Tournament():
             while i < match_per_round:
                 game1 = self.games[l]["class"]("dqnxr")
                 game2 = self.games[c]["class"]("dqnxr")
-                res = self.match(game1, game2, match_per_round)
+                res = self.match(game1, game2)
 
                 result[c, l, res] += 1
                 i += 1
