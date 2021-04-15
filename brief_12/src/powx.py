@@ -48,19 +48,19 @@ class Tournament():
         result = np.zeros((tournament_shape[0], tournament_shape[1], 3))
         for i in range(np.multiply(tournament_shape)):
             # get the line and column index from the flat index
-            c, l = np.unravel_index(i, tournament_shape)
-            if c == l:
+            l, c = np.unravel_index(i, tournament_shape)
+            if l == c:
                 # Don't run match against oneself
                 continue
 
-            i = 0
-            while i < match_per_round:
+            j = 0
+            while j < match_per_round:
                 game1 = self.games[l]["class"]("dqnxr")
                 game2 = self.games[c]["class"]("dqnxr")
                 res = self.match(game1, game2)
 
-                result[c, l, res] += 1
-                i += 1
+                result[l, c, res] += 1
+                j += 1
 
 
         print("Tournament result")
@@ -142,7 +142,7 @@ class MyGame():
         return self.board
 
     def play_one(self, value, player, board=None):
-        '''Play_one (value, player, [board]) -> returns the new state, the reward and the terminal state.'''
+        '''Returns the new state, the reward and the terminal state.'''
         if board is None:
             board = self.board
 
