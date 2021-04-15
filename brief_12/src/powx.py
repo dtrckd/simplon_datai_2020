@@ -201,3 +201,4 @@ def train():
 if __name__ == "__main__":
 
     t = Tournament()
+    t.run()
