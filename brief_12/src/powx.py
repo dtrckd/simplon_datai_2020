@@ -75,14 +75,15 @@ class Tournament():
         '''
         i = 0
         board = None
+        # Game1 and game2 always play with their first player here...
         while i < max_hit:
-            state, reward, terminal = game1.play_one(1, game1.get_player(0), game2.get_board())
+            state, reward, terminal = game1.play_one(1, game1.get_player(1), game2.get_board())
             if reward == 1:
                 return 0
             if terminal:
                 return 2
 
-            state, reward, terminal = game2.play_one(-1, game2.get_player(0), game1.get_board())
+            state, reward, terminal = game2.play_one(-1, game2.get_player(1), game1.get_board())
             if reward == 1:
                 return 1
             if terminal:
@@ -125,9 +126,9 @@ class MyGame():
             return MyPlayer() # DqnAgent()
 
     def get_player(self, i):
-        if i == 0:
+        if i == 1:
             return self.player1
-        elif i == 1:
+        elif i == 2:
             return self.player2
         else:
             raise ValueError("Bad player index: %d" % i)
@@ -187,8 +188,8 @@ class MyPlayer():
 def train():
 
     game = MyGame("dqnxr")
-    dqn_agent = game.get_player(0)
-    teacher = game.get_player(1)
+    dqn_agent = game.get_player(1)
+    teacher = game.get_player(2)
 
     for game in range(1000):
         cur_state = game.reset()
