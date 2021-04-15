@@ -38,9 +38,9 @@ class Tournament():
             g['class']()
 
     def run(self):
-        ''' One tournament round. Everyone play againt everyone two times,
-            each game start to play once.
+        ''' One tournament round. Everyone play againt each other 100 times.
         '''
+        match_per_round = 100
         tournament_shape = (len(self.games), len(self.games))
         # There are 3 features in the last dimension:
         # [i][j][0] -> games[i] number of wins
@@ -56,14 +56,14 @@ class Tournament():
 
             game1 = self.games[l]["class"]("dqnxr")
             game2 = self.games[c]["class"]("dqnxr")
-            res = self.match(game1, game2)
+            res = self.match(game1, game2, match_per_round)
             result[c, l, res] += 1
 
         print("Tournament result")
         # @TODO: Sumarize the result in a table
         print(result)
 
-    def match(self, game1, game2):
+    def match(self, game1, game2, nruns=1):
         '''Returns
             1 game1 win
             2 game2 win
@@ -71,7 +71,7 @@ class Tournament():
         '''
         i = 0
         board = None
-        while i < 1000:
+        while i < nruns:
             state, reward, terminal = game1.play_one(1, game1.player1, game2.get_board())
             if reward == 1:
                 return 1
